@@ -26,8 +26,6 @@ function [tt, X] = SSA(prop, nr, x0, tspan, p, step)
 % Create vector that decide what results to store (to speed up run time and
 % save memory)
 
-% fanny testing git
-
 if nargin==5
     step = 0.1;
 end
