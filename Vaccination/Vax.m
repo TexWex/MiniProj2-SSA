@@ -1,4 +1,4 @@
-clear; clf
+clear;
 
 S0 = 1000;
 E0 = 20;
@@ -12,12 +12,12 @@ alfa = 1/3; %inverse of incubation time
 beta = 0.6; %rate of infection
 gamma = 1/7; %recovery rate
 micro = 0.01; %Mortality
-v = 5; %rate of vaccination
+v = 0.05; %rate of vaccination
 N = S0 + E0 + I0 + R0 + D0;
 p = [alfa; beta; gamma; micro; v; N];
 
 tspan = [0 120];
-step = 0.1;
+step = 1;
 [t, x] = SSA(@propVax, @stochVax, x0, tspan, p, step);
 hold on
 plot(t, x(:,1), 'b-', 'LineWidth', 2);
